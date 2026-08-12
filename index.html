@@ -495,7 +495,7 @@
   </div>
   <div class="prog-wrap">
     <div class="prog-item reveal">
-      <div class="prog-heure">15 h 30</div>
+      <div class="prog-heure">16 h 30</div>
       <div><h3>Cérémonie civile</h3><p>Samedi 19 septembre 2026, dans le jardin du Pavillon Lotus — suivie du cocktail d'honneur.</p></div>
     </div>
     <div class="prog-item reveal">
@@ -650,7 +650,7 @@
   });
 
   // ===== Compte à rebours =====
-  const cible = new Date('2026-09-19T15:30:00Z').getTime();
+  const cible = new Date('2026-09-19T16:30:00Z').getTime();
   function maj(){
     const d = cible - Date.now();
     if(d <= 0){ document.getElementById('compte').innerHTML = '<div><span>👑</span><small>C\'est le grand jour!</small></div>'; return; }
@@ -764,4 +764,4 @@
 </script>
 </body>
 </html>
-<!-- v34 — formulaire RSVP : ajout téléphone + email (obligatoires) -->
+<!-- v35 — cérémonie civile : 15 h 30 → 16 h 30 (programme + compte à rebours) -->
