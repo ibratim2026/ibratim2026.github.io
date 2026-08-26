@@ -495,12 +495,16 @@
   </div>
   <div class="prog-wrap">
     <div class="prog-item reveal">
-      <div class="prog-heure">16 h 30</div>
-      <div><h3>Cérémonie civile</h3><p>Samedi 19 septembre 2026, dans le jardin du Pavillon Lotus — suivie du cocktail d'honneur.</p></div>
+      <div class="prog-heure">15 h</div>
+      <div><h3>Cérémonie civile</h3><p>Samedi 19 septembre 2026, à la mairie de Cocody.</p></div>
+    </div>
+    <div class="prog-item reveal">
+      <div class="prog-heure">17 h</div>
+      <div><h3>Cocktail d'honneur</h3><p>Dans les jardins du Pavillon Lotus.</p></div>
     </div>
     <div class="prog-item reveal">
       <div class="prog-heure">19 h</div>
-      <div><h3>Dîner (souper)</h3><p>Le repas sera servi au Pavillon Lotus, Abidjan.</p></div>
+      <div><h3>Dîner (souper)</h3><p>Le repas sera servi dans la salle du Pavillon Lotus.</p></div>
     </div>
     <div class="prog-item reveal">
       <div class="prog-heure">✦</div>
@@ -650,7 +654,7 @@
   });
 
   // ===== Compte à rebours =====
-  const cible = new Date('2026-09-19T16:30:00Z').getTime();
+  const cible = new Date('2026-09-19T15:00:00Z').getTime();
   function maj(){
     const d = cible - Date.now();
     if(d <= 0){ document.getElementById('compte').innerHTML = '<div><span>👑</span><small>C\'est le grand jour!</small></div>'; return; }
@@ -764,4 +768,4 @@
 </script>
 </body>
 </html>
-<!-- v35 — cérémonie civile : 15 h 30 → 16 h 30 (programme + compte à rebours) -->
+<!-- v36 — programme : cérémonie civile 15 h à la mairie de Cocody, cocktail 17 h aux jardins du Pavillon Lotus, dîner 19 h en salle (+ compte à rebours 15 h) -->
