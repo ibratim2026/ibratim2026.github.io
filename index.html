@@ -742,8 +742,10 @@
     etatRsvp.className=''; etatRsvp.textContent='Envoi en cours…';
     const donnees = new FormData(formRsvp);
     if(selPresence.value.indexOf('Non') === 0){ donnees.set('nombre',''); donnees.set('plusun',''); donnees.set('chanson',''); }
-    fetch(RSVP_URL, {method:'POST', body:donnees})
-      .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); })
+    // mode 'no-cors' : la reponse d'Apps Script passe par une redirection Google qui
+    // casse souvent en CORS. Sans ca, la ligne etait bien enregistree mais l'invite
+    // voyait « echec » et renvoyait le formulaire -> doublons.
+    fetch(RSVP_URL, {method:'POST', mode:'no-cors', body:donnees})
       .then(()=>{
         formRsvp.style.display='none';
         document.getElementById('rsvp-merci').style.display='block';
@@ -768,4 +770,4 @@
 </script>
 </body>
 </html>
-<!-- v37 — date limite de confirmation RSVP portée au 10 septembre 2026 -->
+<!-- v38 — RSVP : envoi en mode no-cors (fin des faux messages d'echec qui provoquaient des doublons) + date limite au 10 septembre 2026 -->
